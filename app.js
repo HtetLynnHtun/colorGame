@@ -8,6 +8,7 @@ let h1 = document.querySelector("h1");
 let resetButton = document.querySelector("#reset");
 let easyMode = document.querySelector("#easyMode");
 let hardMode = document.querySelector("#hardMode");
+let success = new Audio("makeIt.mp3");
 
 // ****************Supporter functions*************************
 function changeColors(color) {
@@ -131,6 +132,7 @@ for (let i = 0; i < squares.length; i++) {
         let clickedColor = this.style.background;
         //compare clickedColor to pickedColor
         if (clickedColor === pickedColor) {
+            success.play();
             messageDisplay.textContent = "Correct!";
             changeColors(clickedColor);
             h1.style.background = clickedColor;
